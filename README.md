@@ -36,5 +36,11 @@ yarn test
 
 yarn test:cov
 ```
+```shell
+# Пример без ручного ввода
+
+node ./dist/main.js <<< "1+2-3"
+```
+
 ### Пример работы
 <img style="max-width: 500px; height: auto" alt="example" src="img.png"/>
