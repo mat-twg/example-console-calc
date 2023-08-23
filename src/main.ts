@@ -6,7 +6,8 @@ export const rl = readline.createInterface({ input, output });
 export enum CALC {
   QUESTION = 'Введите выражение: ',
   ERROR = 'В выражении допущены ошибки: ',
-  ERROR_CHARS = 'допускается использовать только символы ,.+-*/()',
+  ERROR_EMPTY = 'пустая строка',
+  ERROR_CHARS = 'допускается использовать только символы 0-9,.+*/()',
   ERROR_DOUBLES = 'найдено недопустимое повторение символов',
   ERROR_BRACKETS = 'неверно указаны скобки',
   ERROR_MATH = 'невозможно рассчитать',
@@ -17,6 +18,10 @@ export enum CALC {
 export const checkChars = (expr: string): Promise<string> => {
   return new Promise((resolve, reject) => {
     const string = expr.replace(/\s/g, '').replace(/,/g, '.');
+
+    if (string.length === 0) {
+      return reject(CALC.ERROR + CALC.ERROR_EMPTY);
+    }
 
     return /^([.+\-*\/()\d])+$/gs.test(string)
       ? resolve(string)

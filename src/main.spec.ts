@@ -11,6 +11,11 @@ describe('Check', () => {
       main.CALC.ERROR + main.CALC.ERROR_CHARS,
     );
   });
+  it(`Проверка пустой строки: ' '`, () => {
+    expect(main.checkChars(' ')).rejects.toBe(
+      main.CALC.ERROR + main.CALC.ERROR_EMPTY,
+    );
+  });
   it(`Проверка повторных символов: '1++1'`, () => {
     expect(main.checkDoubles('1++1')).rejects.toBe(
       main.CALC.ERROR + main.CALC.ERROR_DOUBLES,

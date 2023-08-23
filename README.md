@@ -39,7 +39,7 @@ yarn test:cov
 ```shell
 # Пример без ручного ввода
 
-node ./dist/main.js <<< "1+2-3"
+node ./dist/main <<< "1+2-3"
 ```
 
 ### Пример работы
