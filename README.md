@@ -36,5 +36,5 @@ yarn test
 
 yarn test:cov
 ```
-## Пример работы
+### Пример работы
 <img style="max-width: 500px; height: auto" alt="example" src="img.png"/>
