@@ -1,0 +1,12 @@
+# Idea
+.idea
+
+# Node
+dist/
+node_modules/
+
+# Local
+.env.local
+
+# Tests
+coverage
